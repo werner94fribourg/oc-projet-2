@@ -1,8 +1,95 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
 
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*
+* Desktop
+*/
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0px 25px;
+  align-items: flex-end;
+}
+
+.header__img {
+  width: 150px;
+  height: auto;
+  content: url('../assets/img/logo/Booki.png');
+}
+
+.header__nav .nav__list {
+  list-style-type: none;
+  align-items: center;
+}
+
+.nav__list .nav__list__item {
+  float: left;
+  padding: 20px 40px;
+  padding-top: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav__list .nav__list__item.active {
+  border-top: 3px solid #0065fc;
+}
+
+.nav__list__item a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav__list__item.active a {
+  color: #0065fc;
+}
+
+/*
+* Tablette
+*/
+@media screen and (max-width: 992px) {
+  .header {
+    padding: 0;
+  }
+  .header__img {
+    margin: 20px auto;
+    display: block;
+    content: url('../assets/img/logo/Booki@3x.png');
+  }
+  .header__nav {
+    width: 100%;
+    padding: 0px;
+  }
+  .header__nav .nav__list {
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+  }
+  .nav__list .nav__list__item {
+    padding: 0;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    width: 50%;
+    border-bottom: 3px solid #f2f2f2;
+  }
+  .nav__list .nav__list__item.active {
+    border-top: none;
+    border-bottom: 3px solid #0065fc;
+  }
+}
+
+/*
+* Mobile
+*/
+@media screen and (max-width: 768px) {
+  .nav__list .nav__list__item {
+    font-size: 15px;
+  }
 }
