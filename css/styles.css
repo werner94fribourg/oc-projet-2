@@ -62,7 +62,7 @@ h2 {
   padding: 0px 25px;
 }
 
-.main__accomodation {
+.main .main__accomodation {
   margin: 10px 0px;
 }
 
@@ -105,7 +105,7 @@ h2 {
   height: 50px;
   width: 760px;
   padding: 17px;
-  font-size: 18px;
+  font-size: 16px;
   border: 1px solid #f2f2f2;
   font-weight: bold;
   color: black;
@@ -146,7 +146,7 @@ h2 {
 }
 
 .search__filters .filters__header {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .search__filters .filters__list {
@@ -185,7 +185,7 @@ h2 {
 .filters__list .filters__list__item a span {
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   margin: 18px;
 }
@@ -228,6 +228,7 @@ h2 {
 
 .content__item:hover {
   color: #deebff;
+  transform: scale(1.1);
 }
 
 .content__item:hover .item__img {
@@ -235,10 +236,7 @@ h2 {
 }
 
 .content__item .item__img img {
-  width: 125%;
   position: absolute;
-  top: 40%;
-  left: 40%;
   transform: translate(-50%, -50%);
 }
 
@@ -249,7 +247,7 @@ h2 {
 .content__item .item__description .item__title {
   margin: 0;
   margin-top: 8px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .content__item .item__description .item__text {
@@ -272,21 +270,32 @@ h2 {
 
 .accomodation__list .block {
   background-color: #f2f2f2;
-  padding: 1% 2%;
+  padding: 5px 2%;
   border-radius: 25px;
 }
 
-.accomodation__list .block__header {
-  margin: 2% 0 5px 2%;
+.accomodation__list .block .block__header {
+  margin: 10px 0 5px 2%;
 }
 
-.accomodation__list .block__header h2 {
+.accomodation__list .block .block__header h2 {
   margin: 0;
   display: inline;
 }
 
-.accomodation__list .block__header .star {
+.accomodation__list .block .block__header .star {
   float: right;
+}
+
+.accomodation__list .block .block__footer {
+  margin: 10px 0 20px 2%;
+}
+
+.accomodation__list .block .block__footer a {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .accomodation__list .list__content {
@@ -306,6 +315,14 @@ h2 {
   display: inline-block;
 }
 
+.block .block__content .content__item .item__description .item__notation {
+  font-size: 0px;
+}
+
+.block.block--1 {
+  max-height: 3000px;
+}
+
 .block.block--1 .block__content {
   display: flex;
   justify-content: space-between;
@@ -320,17 +337,132 @@ h2 {
   margin: 3% auto;
 }
 
-.block.block--1 .block__content .content__item:hover {
-  transform: scale(1.1);
-}
-
 .block.block--1 .block__content .content__item .item__img {
   border-radius: 6% 6% 0 0;
   height: 145px;
 }
 
-.block.block.block--2 .block__content .content__item {
-  width: 300px;
+.block.block--1 .block__content .content__item .item__img img {
+  width: 125%;
+  top: 40%;
+  left: 40%;
+}
+
+.block.block--2 .block__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.block.block--2 .block__content .content__item {
+  width: 90%;
+  height: 150px;
+  margin: 6% auto 2% 2.5%;
+  border: 3px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.block.block--2 .block__content .content__item .item__img {
+  height: 140px;
+  width: 130px;
+  margin-left: 3px;
+  border-radius: 17px 0 0 17px;
+  display: inline-block;
+}
+
+.block.block--2 .block__content .content__item .item__img img {
+  width: 280px;
+  top: 50%;
+  left: 50%;
+}
+
+.block.block--2 .block__content .content__item .item__description {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.block.block.block--2
+  .block__content
+  .content__item
+  .item__description
+  .item__text {
+  margin-bottom: 25%;
+}
+
+.main .main__activity {
+  margin: 10px 0px;
+}
+
+.main__activity .activity__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  flex-wrap: wrap;
+  max-height: 700px;
+  gap: 20px;
+}
+
+.activity__content .content__item {
+  width: 22%;
+  border-radius: 6% 6%;
+  overflow: hidden;
+}
+
+.activity__content .content__item .item__description {
+  margin: 8px 15px;
+}
+.activity__content .content__item .item__img {
+  height: 200px;
+}
+
+.activity__content .content__item.expand .item__img {
+  height: 435px;
+}
+
+.activity__content .content__item.reduce .item__img {
+  height: 150px;
+}
+
+.activity__content .content__item .item__img img {
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+}
+
+@media screen and (min-width: 993px) {
+  .list__content {
+    position: relative;
+  }
+
+  .block.block--1 {
+    margin-right: 383px;
+  }
+
+  .block.block--2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 368px;
+  }
+
+  .block.block--2 .block__content {
+    position: absolute;
+    top: 50px;
+    bottom: 3%;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1379px) {
+  .block.block--1 .block__content {
+    gap: 10px;
+  }
 }
 
 /*
@@ -395,7 +527,6 @@ h2 {
     margin-left: 50px;
     z-index: -1;
   }
-
   .search__bar button {
     float: right;
     z-index: 2;
@@ -405,12 +536,43 @@ h2 {
   }
   .accomodation__list .block.block--1 {
     width: 100%;
+    margin-right: 0;
     border-radius: 0;
     background-color: white;
   }
   .accomodation__list .block.block--2 {
     width: 100%;
+    min-width: 0;
     border-radius: 0;
+  }
+  .block.block.block--2 .block__content .content__item {
+    width: 95%;
+  }
+
+  .main__activity .activity__content {
+    max-height: 3000px;
+    flex-flow: row wrap;
+  }
+  .activity__content .content__item,
+  .activity__content .content__item.expand,
+  .activity__content .content__item.reduce {
+    width: 255px;
+    border-radius: 6%;
+    padding: 0.5%;
+    margin: 3% auto;
+  }
+  .activity__content .content__item .item__img,
+  .activity__content .content__item.expand .item__img,
+  .activity__content .content__item.expand .item__img {
+    border-radius: 6% 6% 0 0;
+    height: 145px;
+  }
+  .activity__content .content__item .item__img img,
+  .activity__content .content__item.expand .item__img img,
+  .activity__content .content__item.reduce .item__img img {
+    width: 125%;
+    top: 40%;
+    left: 40%;
   }
 }
 
@@ -430,11 +592,16 @@ h2 {
   .search__bar button .search--mobile {
     display: inline;
   }
-  .block.block--1 .block__content .content__item {
+  .block.block--1 .block__content .content__item,
+  .activity__content .content__item,
+  .activity__content .content__item.expand,
+  .activity__content .content__item.reduce {
     width: 95%;
     padding: 1%;
   }
-  .block.block--1 .block__content .content__item .item__img {
-    height: 280px;
+  @media screen and (min-width: 762px) {
+    .block.block.block--1 .block__content .content__item {
+      max-width: 330px;
+    }
   }
 }
